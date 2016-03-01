@@ -24,11 +24,15 @@ for i in (0...data.length) do
     link_count += 1 if image.has_key?("link")
   end
   product_many_images << data_product["title"] if link_count > 1
-  #4
+  # 4
   canon_products << data[i] if data_product["brand"].downcase === "canon"
-  #5
+  # 5
   ebay_canon_products << data[i] if data_product["author"]["name"].downcase === "ebay" && data_product["brand"].downcase === "canon"
-
+  # 6
+  puts data_product["brand"]
+  puts data_product["inventories"][0]["price"]
+  puts data_product["link"]
+  puts " "
 end
 
 puts "Total items with kind shopping#product: #{kind_count}"
