@@ -29,6 +29,7 @@ puts google_data["items"][0]["product"]["title"]
    end
  end
  
+ # outputs items with more than one image link
  items.each do |item|
    if item["product"]["images"][0]["link"].length > 1
      puts item["product"]["title"]
