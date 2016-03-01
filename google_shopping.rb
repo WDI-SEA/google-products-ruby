@@ -63,4 +63,55 @@ puts shopping_images.count
 
 puts "********** question four **********"
 
+canon_inventories = []
+	google_data["items"].each do |item|
+		if item["product"]["brand"] == "Canon"
+			canon_inventories << item
+			end 
+		end 
+puts canon_inventories
+
+puts "********** question five **********"
+
+ebay_canon_array = []
+	google_data["items"].each do |item|
+		if item["product"]["brand"] == "Canon" && item["product"]["author"]["name"] == "eBay"
+			ebay_canon_array << item
+		end
+	end
+puts ebay_canon_array
+
+puts "********** question six **********"
+
+google_data["items"].each do |item|
+	puts item["product"]["brand"] 
+end
+
+
+google_data["items"].each do |item|
+	item["product"]["inventories"].each do |inventory|
+	puts inventory["price"]
+	end
+end
+
+google_data["items"].each do |item|
+	item ["product"]["images"].each do |images|
+		puts images["link"]
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
