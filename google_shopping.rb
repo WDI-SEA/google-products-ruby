@@ -59,7 +59,7 @@ puts canon_products.length
 
 ebay_and_canon = []
 google_data["items"].each do |item|
-	if item["product"]["brand"].downcase == "canon" && item["product"]["author"]["name"] == "eBay"
+	if item["product"]["brand"].downcase == "canon" && item["product"]["author"]["name"].downcase.include?("ebay")
 		ebay_and_canon << item
 	end
 end
