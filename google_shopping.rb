@@ -26,6 +26,7 @@ end
 puts '*************************'
 puts 'Total number of items that are shopping products: '
 puts shopping_products
+puts 'This information is also stored in the "currentItemCount field'
 puts '*************************'
 
 #outputs items that have an avilability of backorder
