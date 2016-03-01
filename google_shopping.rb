@@ -1,15 +1,29 @@
-#RUBY!! no more semi-colons... ever.
-
 require 'json'
 file = File.read("./products.json")
 
-#Welcome to RUBY we use snake case now
-#snake case word_word not camel case wordWord
 google_data = JSON.parse(file)
-
-
 #outputs the full object
-puts google_data.inspect
-
+#puts google_data.inspect
 #outputs the first item's title
-puts google_data["items"][0]["product"]["title"]
+#puts google_data["items"][0]["product"]["title"]
+data = google_data["items"]
+
+kind_count = 0
+backorder_count = 0
+
+for i in (0...data.length) do
+  # 1
+  if data[i]["kind"] === "shopping#product"
+    kind_count += 1
+  end
+
+  #2
+  if data[i]["product"]["inventories"][0]["availability"].downcase === "backorder"
+    backorder_count += 1
+  end
+
+
+end
+
+puts "Total items with kind shopping#product: #{kind_count}"
+puts "Total number of items on backorder: #{backorder_count}"
