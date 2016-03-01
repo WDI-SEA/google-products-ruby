@@ -54,10 +54,10 @@ items.each do |item|
  end
 
  
- #outputs all prodcuts with Brand, Price and Image Link
+ outputs all prodcuts with Brand, Price and Image Link
 items.each do |item|
      puts item["product"]["brand"]
      puts item["product"]["inventories"][0]["price"]
      puts item["product"]["images"][0]["link"]
  end
- +
+ 
