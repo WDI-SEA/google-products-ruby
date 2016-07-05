@@ -10,9 +10,59 @@ google_data = JSON.parse(file)
 
 # Use 'inspect' to see the contents of an array or hash
 # Hashes are similar to objects in JavaScript
-puts google_data.inspect
+# puts google_data.inspect
+
+# NOTES
 
 # Hashes require bracket syntax
-# puts google_data['items'][0]['product']['title']
 
 # Put your answers below here
+
+# 1
+
+# results = google_data['items'].select do |element|
+#   element['kind'] == 'shopping#product'
+# end
+
+# puts results.inspect
+
+# puts results.length
+
+# 2
+# results = google_data['items'].select do |element|
+#   element['product']['inventories'][0]['availability'] == 'backorder'
+# end
+
+# puts results.inspect
+
+# puts results.length
+
+# 3
+# results =  google_data['items'].select do |element|
+#   element['product']['images'].length > 1
+# end
+
+# puts results.length
+
+# 4
+# results =  google_data['items'].select do |element|
+#   element['product']['brand'] == 'Canon'
+# end
+
+# puts results.length
+
+# 5
+# results =  google_data['items'].select do |element|
+#   element['product']['author']['name'] == 'eBay'
+# end
+
+# puts results.inspect
+
+# puts results.length
+
+# 6
+google_data['items'].each do |element|
+  puts element['product']['brand']
+  puts element['product']['inventories'][0]['price']
+  puts element['product']['images'][0]['link']
+end
